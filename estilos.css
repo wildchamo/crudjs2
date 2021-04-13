@@ -1,0 +1,95 @@
+body{
+	margin: 0px 0px 0px 0px;
+	height:100%;
+	font-family: arial;
+	font-size: 11px;
+	}
+form {
+	margin-top: 10px;
+	margin-left:5px;
+	margin-right:5px;
+	}
+caption {
+	margin: 5px 5px 5px 5px;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+	}
+label {
+	font-family: arial;
+	font-size: 11px;
+	vertical-align: middle;
+	}
+table {
+	font-family: arial;
+	font-size: 11px;
+	}
+table th {
+	background-color: #000066;
+	color: white;
+	}
+input:focus {
+	border-color: #00CCFF;
+	/*border-color: #FF0000;*/
+}
+#contenedor {
+	width: 100%;
+	height: 100%;
+	background-color:#FEFEFE;
+	min-width: 750px;
+	min-height: 600px;
+	}
+#encabezado {
+	width: 100%;
+	height: 100px;
+	background-color:#000066;
+	}
+#menu {
+	width: 100%;
+	height: 20px;
+	background-color:#88AACC;
+	}
+#menu a {
+	margin-top: 10px;
+	margin-left: 5px;
+	color: #FFFFFF;
+	}
+#contenido {
+	width: 750px;
+	margin: 0 auto;
+	}
+#contenido #primario {
+	float: left;
+	width: 300px;
+	height: 380px;
+	background-color:#EFEEFD;
+	}
+#contenido #secundario {
+	float: left;
+	width: 450px;
+	height: 380px;
+	background-color:#EFEFFF;
+	}
+#pie{
+	clear: both;
+	width: 100%;
+	height: 100px;
+	background-color:#000000;
+	}
+.error {
+	font-family: arial;
+	font-size: 8px;
+	vertical-align: middle;
+	color: #FF0000;
+	}
+.enlace_tabla {
+	font-family: arial;
+	font-size: 11px;
+	vertical-align: middle;
+	color: #0000FF;
+	text-decoration: underline;
+	}
+.enlace_tabla:hover {
+	color: #FF0000;
+	cursor: pointer;
+	}

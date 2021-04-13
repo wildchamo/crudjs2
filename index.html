@@ -1,0 +1,122 @@
+<!DOCTYPE html5>
+<html>
+	
+	<head>
+		<title>Programa web - CRUD</title>
+		<link href="estilos.css" rel="stylesheet">
+		<script src="libreria.js"></script>	
+	</head>
+	
+	<body>
+		<div id="contenedor">
+			<div id="encabezado">
+			</div>
+			<div id="menu">
+				<nav> 
+					<a href="#">Inicio</a>
+				    <a href="#">Productos</a>
+					<a href="#">Inventarios</a>
+					<a href="#">Acerca de</a>
+				</nav>
+			</div>
+			<div id="contenido">
+				<div id="primario">
+					<form name="fr" onsubmit="event.preventDefault();enviar();">
+						<table border=0>
+							<caption>Formulario Producto</caption>
+							<tr>
+								<td><label>Identificacion</label>
+								    <label id="ErrorCodigo" class="error" style="display:none;">* Este campo es requerido.</label>
+								<td><input type="text" id="codigo" name="codigo"></td>   
+								<!--  required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')" -->
+							</tr>
+							<tr>
+								<td><label>Nombre</label></td>
+								<td><input type="text" id="nombre" name="nombre" onkeypress="return soloLetras(event);"></td>
+								<!--required="required" oninvalid="setCustomValidity('Digite el nombre del producto')" oninput="setCustomValidity('')" pattern="[A-Z]{10,100}"-->
+							</tr>
+							<tr>
+								<td><label>Apellido</label></td>
+								<td><input type="text" id="apellido" name="apellido" onkeypress="return soloLetras(event);"></td>
+								<!--required="required" oninvalid="setCustomValidity('Digite el nombre del producto')" oninput="setCustomValidity('')" pattern="[A-Z]{10,100}"-->
+							</tr>
+							<tr>
+								<td><label>Fecha de nacimiento</label></td>
+								<td>
+									<input type="date" name="fecha" min="01/02/2020" max="31/12/2020" value="ACTIVO" >
+								</td>
+							</tr>
+							<tr>
+								<td><label>Direccion residencia</label></td>
+								<td><input type="text" id="direccion" name="direccion" onkeypress="return soloLetras(event);"></td>
+								<!--required="required" oninvalid="setCustomValidity('Digite el nombre del producto')" oninput="setCustomValidity('')" pattern="[A-Z]{10,100}"-->
+							</tr>
+							<tr>
+								<td><label>pais</label></td>
+								<td><input type="text" id="pais" name="pais" onkeypress="return soloLetras(event);"></td>
+								<!--required="required" oninvalid="setCustomValidity('Digite el nombre del producto')" oninput="setCustomValidity('')" pattern="[A-Z]{10,100}"-->
+							</tr>
+							<tr>
+								<td><label>telefono</label>
+								    <label id="ErrorCodigo" class="error" style="display:none;">* Este campo es requerido.</label>
+								<td><input type="number" id="telefono" name="telefono"></td>   
+								<!--  required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')" -->
+							</tr>
+							<tr>
+								<td><label>email</label>
+								    <label id="ErrorCodigo" class="error" style="display:none;">* Este campo es requerido.</label>
+								<td><input type="email" id="email" name="email"></td>   
+								<!--  required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')" -->
+							</tr>
+							<tr>
+								<td><label>salario</label>
+								    <label id="ErrorCodigo" class="error" style="display:none;">* Este campo es requerido.</label>
+								<td><input type="number" id="salario" name="salario"></td>   
+								<!--  required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')" -->
+							</tr>
+							<tr>
+								<td><label>Estado</label></td>
+								<td>
+									<label><input type="radio" name="estado" value="ACTIVO">Activo</label>
+									<label><input type="radio" name="estado" value="INACTIVO" checked >Inactivo</label>
+								</td>
+								
+							</tr>
+							<tr>
+								<td colspan=2 align="right"><input type="submit" value="Grabar"></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div id="secundario" id="productos">
+					<table style="margin-top:20px;" id= "tabla">
+						<thead>
+							<tr>
+								<th>Identificacion</th>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>fecha nacimiento</th>
+								<th>dirección residencia</th>
+								<th>pais</th>
+								<th>telefono</th>
+								<th>email</th>
+								<th>salario</th>
+								<th>estado</th>
+								<th></th>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+
+				</div>
+				
+				<script> precargaDatos(); </script>
+				
+			</div>
+			<div id="pie">
+			</div>
+		</div>
+	</body>
+	
+</html>
