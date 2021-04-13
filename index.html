@@ -27,7 +27,7 @@
 							<tr>
 								<td><label>Identificacion</label>
 								    <label id="ErrorCodigo" class="error" style="display:none;">* Este campo es requerido.</label>
-								<td><input type="text" id="codigo" name="codigo"></td>   
+								<td><input type="text" id="identificacion" name="identificacion"></td>   
 								<!--  required oninvalid="setCustomValidity('Digite el c&oacute;digo del producto')" oninput="setCustomValidity('')" -->
 							</tr>
 							<tr>
@@ -43,7 +43,7 @@
 							<tr>
 								<td><label>Fecha de nacimiento</label></td>
 								<td>
-									<input type="date" name="fecha" min="01/02/2020" max="31/12/2020" value="ACTIVO" >
+									<input type="date" name="fecha" id="fecha" min="01/02/2020" max="31/12/2020" value="ACTIVO" >
 								</td>
 							</tr>
 							<tr>
@@ -77,8 +77,8 @@
 							<tr>
 								<td><label>Estado</label></td>
 								<td>
-									<label><input type="radio" name="estado" value="ACTIVO">Activo</label>
-									<label><input type="radio" name="estado" value="INACTIVO" checked >Inactivo</label>
+									<label><input type="radio" name="estado" id="estado" value="ACTIVO">Activo</label>
+									<label><input type="radio" name="estado" id="estado" value="INACTIVO" checked >Inactivo</label>
 								</td>
 								
 							</tr>

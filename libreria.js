@@ -20,16 +20,16 @@ function enviar() {
 
 function leerDatos() {
 	var datos = { };
-	datos["identificacion"] = document.getElementById("codigo").value;
+	datos["identificacion"] = document.getElementById("identificacion").value;
 	datos["nombre"] = document.getElementById("nombre").value;
-	datos["apellido"] = document.getElementById("codigo").value;
-	datos["fecha"] = document.getElementById("nombre").value;
-	datos["direccion"] = document.getElementById("codigo").value;
-	datos["pais"] = document.getElementById("nombre").value;
-	datos["telefono"] = document.getElementById("codigo").value;
-	datos["email"] = document.getElementById("nombre").value;
-	datos["salario"] = document.getElementById("nombre").value;
-	datos["estado"] = document.getElementById("nombre").value;
+	datos["apellido"] = document.getElementById("apellido").value;
+	datos["fecha"] = document.getElementById("fecha").value;
+	datos["direccion"] = document.getElementById("direccion").value;
+	datos["pais"] = document.getElementById("pais").value;
+	datos["telefono"] = document.getElementById("telefono").value;
+	datos["email"] = document.getElementById("email").value;
+	datos["salario"] = document.getElementById("salario").value;
+	datos["estado"] = document.getElementById("estado").value;
 	
 	/*
 	datos["costo"] = document.getElementById("costo").value;
@@ -45,34 +45,34 @@ function insertar(datos) {
 	var NuevoReg = tabla.insertRow(filas.length);
 	
 	campo1 = NuevoReg.insertCell(0);
-	campo1.innerHTML = datos.codigo;
+	campo1.innerHTML = datos.identificacion;
 	
 	campo2 = NuevoReg.insertCell(1);
 	campo2.innerHTML = datos.nombre;
 
 	campo3 = NuevoReg.insertCell(2);
-	campo3.innerHTML = datos.nombre;
+	campo3.innerHTML = datos.apellido;
 	
 	campo4 = NuevoReg.insertCell(3);
-	campo4.innerHTML = datos.nombre;
+	campo4.innerHTML = datos.fecha;
 	
 	campo5 = NuevoReg.insertCell(4);
-	campo5.innerHTML = datos.nombre;
+	campo5.innerHTML = datos.direccion;
 	
 	campo6 = NuevoReg.insertCell(5);
-	campo6.innerHTML = datos.nombre;
+	campo6.innerHTML = datos.pais;
 	
 	campo7 = NuevoReg.insertCell(6);
-	campo7.innerHTML = datos.nombre;
+	campo7.innerHTML = datos.telefono;
 	
 	campo8 = NuevoReg.insertCell(7);
-	campo8.innerHTML = datos.nombre;
+	campo8.innerHTML = datos.email;
 	
 	campo9 = NuevoReg.insertCell(8);
-	campo9.innerHTML = datos.nombre;
+	campo9.innerHTML = datos.salario;
 	
 	campo10 = NuevoReg.insertCell(9);
-	campo10.innerHTML = datos.nombre;
+	campo10.innerHTML = datos.estado;
 	
     campo3 = NuevoReg.insertCell(10);
 	campo3.innerHTML = "<a class='enlace_tabla' onClick='onClick_Editar(this);'>Editar</a> <a class='enlace_tabla' onClick='onClick_Borrar(this);'>Borrar</a>";
@@ -94,8 +94,16 @@ function precargaDatos( ) {
 }
 
 function actualizar( datos ) {
-	regSeleccionado.cells[0].innerHTML = datos.codigo;
+	regSeleccionado.cells[0].innerHTML = datos.identificacion;
 	regSeleccionado.cells[1].innerHTML = datos.nombre;
+	regSeleccionado.cells[2].innerHTML = datos.apellido;
+	regSeleccionado.cells[3].innerHTML = datos.fecha;
+	regSeleccionado.cells[4].innerHTML = datos.direccion;
+	regSeleccionado.cells[5].innerHTML = datos.pais;
+	regSeleccionado.cells[6].innerHTML = datos.telefono;
+	regSeleccionado.cells[7].innerHTML = datos.email;
+	regSeleccionado.cells[8].innerHTML = datos.salario;
+	regSeleccionado.cells[9].innerHTML = datos.estado;
 }
 
 function onClick_Editar( reg ) {
@@ -148,17 +156,17 @@ function validar( ) {
 	var esValido = true;
 	
 
-	if ( document.getElementById("codigo").value == "" || document.getElementById("codigo").value == null ) {
+	if ( document.getElementById("identificacion").value == "" || document.getElementById("identificacion").value == null ) {
 		alert('El codigo es requerido');
 		esValido = false;
 		document.getElementById("ErrorCodigo").innerHTML = "* Este campo es requerido.";
 	}
-	else if ( isNaN( document.getElementById("codigo").value ) ) {
+	else if ( isNaN( document.getElementById("identificacion").value ) ) {
 		alert('El codigo debe ser un dato numerico.');
 		esValido = false;
 		document.getElementById("ErrorCodigo").innerHTML = "* Debe ser un dato num&eacute;rico.";
 		}
-	else if ( regSeleccionado == null  &&  existeCodigo( document.getElementById("codigo").value ) ) {  // Aplica solo para registros nuevos
+	else if ( regSeleccionado == null  &&  existeCodigo( document.getElementById("identificacion").value ) ) {  // Aplica solo para registros nuevos
 		alert('El codigo ya existe!');
 		esValido = false;
 		document.getElementById("ErrorCodigo").innerHTML = "* El c&oacute;digo ya existe.";
@@ -169,9 +177,9 @@ function validar( ) {
 	}
 
 	if ( !esValido ) {
-		alert ( document.getElementById("codigo").style.borderColor );
+		alert ( document.getElementById("identificacion").style.borderColor );
 		document.getElementById("ErrorCodigo").style.display="block";
-		document.getElementById("codigo").focus();
+		document.getElementById("identificacion").focus();
 	}
 
 	return esValido;
